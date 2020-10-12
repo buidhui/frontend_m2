@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="contact" translate="label">
+            <label>contact</label>
+        </tab>
+        <section id="contact-icon" translate="label" type="text"  showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>contact-icon</label>
+            <tab>contact</tab>
+            <resource>Magento_Cms::save</resource>
+            <group id="contact-footer" translate="label" type="text"  showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Footer Configruration</label>
+                <field id="chat" translate="label" type="text"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Chat</label>
+                    <comment>Enter chat link</comment>
+                </field>
+                <field id="call" translate="label" type="text"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Call</label>
+                    <comment>Enter Call link</comment>
+                </field>
+                <field id="email" translate="label" type="text"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email</label>
+                    <comment>Enter Email link</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

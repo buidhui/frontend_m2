@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">    
+    <body> 
+        <referenceContainer name="header.container">
+            <!-- <referenceContainer name=" header.panel.wrapper" remove="true"/> -->
+            <block class="Magento\Customer\Block\Account\Navigation" name="header_top" template="Magento_Theme::shipping.phtml" before="-">
+            </block>
+        </referenceContainer>
+        <referenceBlock name="logo" remove="true"/>
+         <referenceContainer name="header.panel.wrapper" remove="true"/>
+        <referenceContainer name="header-wrapper" htmlClass="container header content">
+            <container name="header-row" htmlClass="row header-wrapper__row" htmlTag="div">
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="content" template="Magento_Theme::nav-toggle.phtml" before="-">
+                </block>
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="title-logo" template="Magento_Theme::title-logo.phtml" >
+                </block>
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="heart" template="Magento_Theme::icon-heart.phtml" after="title-logo" >
+                </block>
+            </container>
+        </referenceContainer>
+         <referenceContainer name="page.top">
+            <block class="Magento\Theme\Block\Html\Topmenu" name="topnav.custom" template="Magento_Theme::html/topmenu_custom.phtml" after="navigation.sections"/>
+        </referenceContainer>
+        <referenceContainer name="footer-container" >
+            <container htmlTag="div" htmlClass="contact" before="-">
+                <block class="Magento\Cms\Block\Block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">test1</argument>
+                    </arguments>
+                </block>
+            </container>
+            <referenceContainer name="footer">
+                <container name="subscribe-comment" htmlTag="div" htmlClass="footer-title" before="form.subscribe">
+                    <block class="Magento\Framework\View\Element\Text" name="subscribe-text">
+                        <arguments>
+                            <argument name="text" xsi:type="string">Sign up now for our newsletter and get $5 off the next order</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </referenceContainer>
+             <referenceContainer name="footer-container">
+                <referenceBlock name="footer_links" remove="true" >
+                </referenceBlock>
+            </referenceContainer>
+            <container htmlTag="div" htmlClass="footer-bottom container" before="footer-container" >
+                <container htmlTag="div" htmlClass="footer-menu">
+                    <block class="Magento\Cms\Block\Block" >
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">menu-footer</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container htmlTag="div" htmlClass="footer-carosel" >
+                    <block name="footer-carosel" template="Magento_Theme::footer-carosel.phtml"  >
+                    </block>
+                    <!-- <block class="Magento\Cms\Block\Block" >
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-carosel</argument>
+                        </arguments>
+                    </block> -->
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="top.search" destination="header-row" before="content"/>
+        <move element="minicart" destination="header-row" after="heart"/>
+    </body>
+</page>    
